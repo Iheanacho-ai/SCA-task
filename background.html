@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Background Generator</title>
+   <style>
+      body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: cursive;
+       }
+       div{
+        margin: 15% auto;
+        text-align: center;
+       }
+   </style>
+</head>
+<body>
+    <div>
+        <h2>Background Generator</h2>
+        <p>The background changes randomly!</p>
+    </div>
+    <script>
+        const body = document.body;
+        const color = [
+        "#ff0000",
+        "ff0088",
+        "0000ff",
+        "00d9ff",
+        "00ff00",
+        "37ff00",
+        "ff00f7",
+        "#9ce316",
+        "#00ffff",
+        "#ffff00",
+        ]
+       const changecolor = () => {
+       let random = Math.floor(Math.random() * color.length );
+       body.style.backgroundColor = color[random];
+       setTimeout("changecolor()", 1000);
+       } 
+       window.onload = changecolor;
+    </script>
+</body>
+</html>
