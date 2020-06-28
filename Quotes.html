@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Quote Generator</title>
+    <style>
+        body{
+          background-color: #f2f2f2;
+        }
+        .heading{
+            text-align: center;
+            margin: 5%;
+        }
+        .quotes{
+           width: 90%;
+           height: 300px;
+           margin: 0 auto;
+           line-height: 300px;
+           text-align: center;
+           background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="heading">
+            <h1>Quoted up!</h1>
+            <p>Read beautiful quotes to help you through the day</p>
+        </div> 
+        <div class="quotes">
+            <p class="place"></p>
+        </div>
+    </div>
+    <script>
+        let place = document.querySelector(".place");
+        const quotes = [
+            "Love yourself. Then forget it. Then, love the world. \n\t - Mary Oliver",
+            "True love stories never have endings. \n\t - Richard Bach",
+            "Him that I love, I wish to be free - even from me. \n\t - Anne Morrow Lindbergh ",
+            "It is better to be hated for what you are than to be loved for what you are not. \n\t - Andre Gide",
+            "This is a wonderful day, I have never seen this one before .\n \t- Maya Angelou",
+            "Beauty begins the moment you decide to be yourself .\n \t- Coco Chanel",
+            "You are imperfect, permanently and inevitably flawed. And you are beautiful. \n\t - Amy Bloom",
+            "Whenever you are creating beauty around you, you are restoring your own soul. \n\t - Alice Walker",
+            "It's just a bad day. Not a bad life. \n\t - Unknown",
+            "Beauty in things exists in the mind which contemplates them. \n\t - David Hume ",
+            "I don't think of all the misery but of the beauty that still remains. \n\t - Anne Frank",
+            "Though we travel the world over to find the beautiful, we must carry it with us or we find it not.. \n\t - Ralph Waldo Emerson"
+        ]
+
+        const changequotes = () => {
+        let random = Math.floor(Math.random() * quotes.length );
+        place.innerHTML = quotes[random];
+        setTimeout("changequotes()", 5000);
+        }
+
+   
+        window.onload = changequotes;
+    </script>
+</body>
+</html>
